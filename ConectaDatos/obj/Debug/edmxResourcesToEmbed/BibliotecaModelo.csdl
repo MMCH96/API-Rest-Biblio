@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bibliotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="autores1">
+    <Key>
+      <PropertyRef Name="id_autor" />
+    </Key>
+    <Property Name="id_autor" Type="Int32" Nullable="false" />
+    <Property Name="nomb_comp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="libro">
+    <Key>
+      <PropertyRef Name="id_libro" />
+    </Key>
+    <Property Name="id_libro" Type="Int32" Nullable="false" />
+    <Property Name="id_autor" Type="Int32" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_lanz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="editorial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idioma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="paginas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="portada" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="bibliotecaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="autores1" EntityType="Self.autores1" />
+    <EntitySet Name="libros" EntityType="Self.libro" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\ConectaDatos.dll.config
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\ConectaDatos.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\ConectaDatos.pdb
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\EntityFramework.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\EntityFramework.xml
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Debug\ConectaDatos.csproj.AssemblyReference.cache
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Debug\ConectaDatos.csproj.CoreCompileInputs.cache
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Debug\ConectaDatos.csproj.CopyComplete
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Debug\ConectaDatos.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Debug\ConectaDatos.pdb

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bibliotecaModelStoreContainer" CdmEntityContainer="bibliotecaEntities">
+    <EntitySetMapping Name="autores1">
+      <EntityTypeMapping TypeName="bibliotecaModel.autores1">
+        <MappingFragment StoreEntitySet="autores1">
+          <ScalarProperty Name="id_autor" ColumnName="id_autor" />
+          <ScalarProperty Name="nomb_comp" ColumnName="nomb_comp" />
+          <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="libros">
+      <EntityTypeMapping TypeName="bibliotecaModel.libro">
+        <MappingFragment StoreEntitySet="libros">
+          <ScalarProperty Name="id_libro" ColumnName="id_libro" />
+          <ScalarProperty Name="id_autor" ColumnName="id_autor" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="fecha_lanz" ColumnName="fecha_lanz" />
+          <ScalarProperty Name="editorial" ColumnName="editorial" />
+          <ScalarProperty Name="idioma" ColumnName="idioma" />
+          <ScalarProperty Name="paginas" ColumnName="paginas" />
+          <ScalarProperty Name="portada" ColumnName="portada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
