@@ -27,5 +27,7 @@ namespace ConectaDatos
     
         public virtual DbSet<autores1> autores1 { get; set; }
         public virtual DbSet<libro> libros { get; set; }
+
+        
     }
 }

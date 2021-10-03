@@ -23,24 +23,25 @@ namespace API_Rest_Biblio.Controllers
         //Vista Libros
         [HttpGet]
         [Route("api/libros")]
-        public List<libro> GetLibros()
+        public libro GetLibros(string nombre)
         {
-            return this.modelo.GetLibros();
+            
+            return this.modelo.GetLibros(nombre);
         }
 
         //Vista Autores
 
         [HttpGet]
         [Route("api/autores")]
-        public List<autores1> GetAutores()
+        public autores1 GetAutores(string nombre)
         {
-            return this.modelo.GetAutores();
+            return modelo.GetAutores(nombre);
         }
 
 
         [HttpPost]
         [Route("api/insertar/autor")]
-        public IHttpActionResult AgregaLibro([FromBody] autores1 usu)
+        public IHttpActionResult AgregaAutor([FromBody] autores1 usu)
         {
             if (ModelState.IsValid)
             {

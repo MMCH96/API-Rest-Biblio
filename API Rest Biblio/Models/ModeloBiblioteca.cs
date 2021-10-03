@@ -19,20 +19,21 @@ namespace API_Rest_Biblio.Moldels
         }
 
         //GET LIBROS
-        public List<libro> GetLibros()
+        public libro GetLibros(string nombre)
         {
             using (bibliotecaEntities libros = new bibliotecaEntities())
             {
-                return libros.libros.ToList();
+                return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
+                //return libros.libros.ToList();
             }
         }
 
         //GET AUTORES
-        public List<autores1> GetAutores()
+        public autores1 GetAutores(string nombre)
         {
             using (bibliotecaEntities autores = new bibliotecaEntities())
             {
-                return autores.autores1.ToList();
+                return autores.autores1.FirstOrDefault(e => e.nomb_comp.Contains(nombre));
             }
         }
 
