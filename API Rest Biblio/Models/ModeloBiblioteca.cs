@@ -1,6 +1,7 @@
 ﻿using ConectaDatos;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -23,8 +24,7 @@ namespace API_Rest_Biblio.Moldels
         {
             using (bibliotecaEntities libros = new bibliotecaEntities())
             {
-             
-                //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
+
                 return libros.libros.ToList().Where(e => e.titulo.Contains(nombre));
             }
         }
@@ -38,6 +38,12 @@ namespace API_Rest_Biblio.Moldels
                 //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
                 return libros.libros.ToList();
             }
+
+        }
+
+        private libro view()
+        {
+            throw new NotImplementedException();
         }
 
         //BUSCAR AUTORES POR NOMBRE

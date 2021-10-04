@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using API_Rest_Biblio.Moldels;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace API_Rest_Biblio.Controllers
 {
@@ -20,42 +21,43 @@ namespace API_Rest_Biblio.Controllers
             this.modelo = new ModeloBiblioteca();
         }
 
-        //Vista Libros
+        //VISTA GENERAL
         [HttpGet]
-        [Route("api/libros")]
+        [Route("lista/libros")]
         public IEnumerable<libro> GetLibros(string nombre)
         {
-            
+            using (bibliotecaEntities db = new bibliotecaEntities())
+            {
+                db.Database.SqlQuery<libro>("Busqueda", new SqlParameter("@nombre", nombre)).ToList();
+            }
             return this.modelo.GetLibros(nombre);
         }
 
-        //Vista Autores
+
+        //BUSQUEDA POR AUTOR LIBRO
 
         [HttpGet]
-        [Route("api/autores")]
+        [Route("busca/autores/nombre")]
         public IEnumerable<autores1> GetAutores(string nombre)
         {
             return modelo.GetAutores(nombre);
         }
 
 
-        //VISTA GENERAL
+        //BUSQUEDA POR NOMBRE DE LIBRO
 
         [HttpGet]
-        [Route("api/libros2")]
-        public IEnumerable<libro> GetLibros2()
+        [Route("busca/libros/nombre")]
+        public IEnumerable<libro> GetLibros2(string nombre)
         {
-            using (bibliotecaEntities libros = new bibliotecaEntities())
-            {
-
-                //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
-                return libros.libros.ToList();
-            }
+           return modelo.GetLibros(nombre);
+            
         }
+
 
         //INSERTAR AUTOR NUEVO
         [HttpPost]
-        [Route("api/insertar/autor")]
+        [Route("insertar/autor")]
         public IHttpActionResult AgregaAutor([FromBody] autores1 usu)
         {
             if (ModelState.IsValid)
@@ -72,7 +74,7 @@ namespace API_Rest_Biblio.Controllers
 
         //INSERTAR LIBRO NUEVO
         [HttpPost]
-        [Route("api/insertar/libro")]
+        [Route("insertar/libro")]
         public IHttpActionResult AgregaLibro([FromBody] libro usu)
         {
             if (ModelState.IsValid)
@@ -89,7 +91,7 @@ namespace API_Rest_Biblio.Controllers
 
         //MODIFICAR AUTOR
         [HttpPut]
-        [Route("api/modificar/autor")]
+        [Route("modificar/autor")]
         public IHttpActionResult Actualizar_Autor(int id,[FromBody]autores1 usu)
         {
             if (ModelState.IsValid)
@@ -116,7 +118,7 @@ namespace API_Rest_Biblio.Controllers
 
         //MODIFICAR LIBRO
         [HttpPut]
-        [Route("api/modificar/libro")]
+        [Route("modificar/libro")]
         public IHttpActionResult Actualizar_Libro(int id, [FromBody] libro usu)
         {
             if (ModelState.IsValid)
@@ -143,7 +145,7 @@ namespace API_Rest_Biblio.Controllers
 
         //ELIMINAR AUTOR
         [HttpDelete]
-        [Route("api/eliminar/autor")]
+        [Route("eliminar/autor")]
         
         public IHttpActionResult EliminarAutor(int id)
         {
@@ -163,7 +165,7 @@ namespace API_Rest_Biblio.Controllers
 
         //ELIMINAR LIBRO
         [HttpDelete]
-        [Route("api/eliminar/libro")]
+        [Route("eliminar/libro")]
 
         public IHttpActionResult EliminarLibro(int id)
         {

@@ -14,7 +14,7 @@ namespace ConsumirApi.Models
         public string editoria { get; set; }
         public string idioma { get; set; }
         public string paginas { get; set; }
-        public string portada { get; set; }
+        public byte[] portada { get; set; }
 
     }
 }
