@@ -23,7 +23,7 @@ namespace API_Rest_Biblio.Controllers
         //Vista Libros
         [HttpGet]
         [Route("api/libros")]
-        public libro GetLibros(string nombre)
+        public IEnumerable<libro> GetLibros(string nombre)
         {
             
             return this.modelo.GetLibros(nombre);
@@ -33,12 +33,27 @@ namespace API_Rest_Biblio.Controllers
 
         [HttpGet]
         [Route("api/autores")]
-        public autores1 GetAutores(string nombre)
+        public IEnumerable<autores1> GetAutores(string nombre)
         {
             return modelo.GetAutores(nombre);
         }
 
 
+        //VISTA GENERAL
+
+        [HttpGet]
+        [Route("api/libros2")]
+        public IEnumerable<libro> GetLibros2()
+        {
+            using (bibliotecaEntities libros = new bibliotecaEntities())
+            {
+
+                //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
+                return libros.libros.ToList();
+            }
+        }
+
+        //INSERTAR AUTOR NUEVO
         [HttpPost]
         [Route("api/insertar/autor")]
         public IHttpActionResult AgregaAutor([FromBody] autores1 usu)
@@ -55,6 +70,24 @@ namespace API_Rest_Biblio.Controllers
             }
         }
 
+        //INSERTAR LIBRO NUEVO
+        [HttpPost]
+        [Route("api/insertar/libro")]
+        public IHttpActionResult AgregaLibro([FromBody] libro usu)
+        {
+            if (ModelState.IsValid)
+            {
+                dbContext.libros.Add(usu);
+                dbContext.SaveChanges();
+                return Ok(usu);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        //MODIFICAR AUTOR
         [HttpPut]
         [Route("api/modificar/autor")]
         public IHttpActionResult Actualizar_Autor(int id,[FromBody]autores1 usu)
@@ -81,7 +114,34 @@ namespace API_Rest_Biblio.Controllers
             }
         }
 
-        //DELETE AUTOR
+        //MODIFICAR LIBRO
+        [HttpPut]
+        [Route("api/modificar/libro")]
+        public IHttpActionResult Actualizar_Libro(int id, [FromBody] libro usu)
+        {
+            if (ModelState.IsValid)
+            {
+                var LibroExiste = dbContext.libros.Count(c => c.id_libro == id) > 0;
+                if (LibroExiste)
+                {
+                    dbContext.Entry(usu).State = EntityState.Modified;
+                    dbContext.SaveChanges();
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+
+                }
+            }
+            else
+            {
+
+                return BadRequest();
+            }
+        }
+
+        //ELIMINAR AUTOR
         [HttpDelete]
         [Route("api/eliminar/autor")]
         
@@ -101,6 +161,25 @@ namespace API_Rest_Biblio.Controllers
             }
         }
 
+        //ELIMINAR LIBRO
+        [HttpDelete]
+        [Route("api/eliminar/libro")]
+
+        public IHttpActionResult EliminarLibro(int id)
+        {
+            var usu = dbContext.libros.Find(id);
+            if (usu != null)
+            {
+                dbContext.libros.Remove(usu);
+                dbContext.SaveChanges();
+                return Ok();
+
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
 
     }
 }

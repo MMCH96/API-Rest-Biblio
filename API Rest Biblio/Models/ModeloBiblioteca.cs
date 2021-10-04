@@ -18,36 +18,41 @@ namespace API_Rest_Biblio.Moldels
 
         }
 
-        //GET LIBROS
-        public libro GetLibros(string nombre)
+        //BUSCAR LIBROS POR NOMBRE
+        public IEnumerable<libro> GetLibros(string nombre)
         {
             using (bibliotecaEntities libros = new bibliotecaEntities())
             {
-                return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
-                //return libros.libros.ToList();
+             
+                //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
+                return libros.libros.ToList().Where(e => e.titulo.Contains(nombre));
             }
         }
 
-        //GET AUTORES
-        public autores1 GetAutores(string nombre)
+        //VISTA GENERAL
+        public IEnumerable<libro> GetLibros2()
+        {
+            using (bibliotecaEntities libros = new bibliotecaEntities())
+            {
+
+                //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
+                return libros.libros.ToList();
+            }
+        }
+
+        //BUSCAR AUTORES POR NOMBRE
+        public IEnumerable<autores1> GetAutores(string nombre)
         {
             using (bibliotecaEntities autores = new bibliotecaEntities())
             {
-                return autores.autores1.FirstOrDefault(e => e.nomb_comp.Contains(nombre));
+                return autores.autores1.ToList().Where(e => e.nomb_comp.Contains(nombre));
             }
         }
 
-        //GET VISTA GENERAL
-        /* public List<> GetVista()
-         {
-             using (bibliotecaEntities autores = new bibliotecaEntities())
-             {
-                 return autores.autores1.ToList();
-             }
-         }*/
+        
 
 
-        //POST NUEVO LIBRO
+       
 
         
 

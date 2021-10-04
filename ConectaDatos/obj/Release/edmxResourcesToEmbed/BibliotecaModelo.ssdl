@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bibliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="autores1">
+    <Key>
+      <PropertyRef Name="id_autor" />
+    </Key>
+    <Property Name="id_autor" Type="int" Nullable="false" />
+    <Property Name="nomb_comp" Type="varchar" MaxLength="50" />
+    <Property Name="nacionalidad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="libros">
+    <Key>
+      <PropertyRef Name="id_libro" />
+    </Key>
+    <Property Name="id_libro" Type="int" Nullable="false" />
+    <Property Name="id_autor" Type="int" />
+    <Property Name="titulo" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_lanz" Type="varchar" MaxLength="50" />
+    <Property Name="editorial" Type="varchar" MaxLength="50" />
+    <Property Name="idioma" Type="varchar" MaxLength="50" />
+    <Property Name="paginas" Type="varchar" MaxLength="50" />
+    <Property Name="portada" Type="image" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'biblioteca.dbo.VistaGeneral' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="VistaGeneral">
+          <Property Name="Titulo" Type="varchar" MaxLength="50" />
+          <Property Name="Autor" Type="varchar" MaxLength="50" />
+          <Property Name="Lanzamiento" Type="varchar" MaxLength="50" />
+          <Property Name="Editorial" Type="varchar" MaxLength="50" />
+          <Property Name="Idioma" Type="varchar" MaxLength="50" />
+          <Property Name="Paginas" Type="varchar" MaxLength="50" />
+          <Property Name="Portada" Type="image" />
+        </EntityType>-->
+  <Association Name="FK_autor">
+    <End Role="libros" Type="Self.libros" Multiplicity="1" />
+    <End Role="libros1" Type="Self.libros" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="libros">
+        <PropertyRef Name="id_libro" />
+      </Principal>
+      <Dependent Role="libros1">
+        <PropertyRef Name="id_libro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bibliotecaModelStoreContainer">
+    <EntitySet Name="autores1" EntityType="Self.autores1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="libros" EntityType="Self.libros" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_autor" Association="Self.FK_autor">
+      <End Role="libros" EntitySet="libros" />
+      <End Role="libros1" EntitySet="libros" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

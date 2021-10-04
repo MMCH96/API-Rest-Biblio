@@ -1,0 +1,12 @@
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\ConectaDatos.dll.config
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\ConectaDatos.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\ConectaDatos.pdb
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\EntityFramework.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\EntityFramework.xml
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Release\ConectaDatos.csproj.AssemblyReference.cache
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Release\ConectaDatos.csproj.CoreCompileInputs.cache
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Release\ConectaDatos.csproj.CopyComplete
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Release\ConectaDatos.dll
+C:\Users\migue\Desktop\API REST Biblioteca\ConectaDatos\obj\Release\ConectaDatos.pdb

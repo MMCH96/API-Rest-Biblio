@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ConsumirApi.Models.Libros>
+
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Autor
+        </th>
+        <th>
+            Titulo
+        </th>
+        <th>
+            Fecha Lanzamiento
+        </th>
+        <th>
+            Editorial
+        </th>
+        <th>
+            Idioma
+        </th>
+        <th>
+            Paginas
+        </th>
+        <th>
+            Portada
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_libro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_lanz)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.editoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idioma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paginas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.portada)
+        </td>
+        <td>
+            @Html.ActionLink("Edita", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Elimina", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
