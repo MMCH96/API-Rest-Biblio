@@ -29,6 +29,16 @@ namespace API_Rest_Biblio.Moldels
             }
         }
 
+        //BUSCAR LIBROS POR Autor
+        public IEnumerable<libro> GetLibros3(int autor)
+        {
+            using (bibliotecaEntities libros = new bibliotecaEntities())
+            {
+
+                return libros.libros.ToList().Where(e => e.id_autor == autor);
+            }
+        }
+
         //VISTA GENERAL
         public IEnumerable<libro> GetLibros2()
         {

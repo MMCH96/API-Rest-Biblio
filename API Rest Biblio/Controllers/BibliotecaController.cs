@@ -24,13 +24,10 @@ namespace API_Rest_Biblio.Controllers
         //VISTA GENERAL
         [HttpGet]
         [Route("lista/libros")]
-        public IEnumerable<libro> GetLibros(string nombre)
+        public IEnumerable<libro> GetLibros2()
         {
-            using (bibliotecaEntities db = new bibliotecaEntities())
-            {
-                db.Database.SqlQuery<libro>("Busqueda", new SqlParameter("@nombre", nombre)).ToList();
-            }
-            return this.modelo.GetLibros(nombre);
+           
+            return this.modelo.GetLibros2();
         }
 
 
@@ -48,10 +45,20 @@ namespace API_Rest_Biblio.Controllers
 
         [HttpGet]
         [Route("busca/libros/nombre")]
-        public IEnumerable<libro> GetLibros2(string nombre)
+        public IEnumerable<libro> GetLibros(string nombre)
         {
            return modelo.GetLibros(nombre);
             
+        }
+
+        //BUSQUEDA POR AUTOR DE LIBRO
+
+        [HttpGet]
+        [Route("busca/libros/nombre")]
+        public IEnumerable<libro> GetLibros3(int autor)
+        {
+            return modelo.GetLibros3(autor);
+
         }
 
 
@@ -65,6 +72,7 @@ namespace API_Rest_Biblio.Controllers
                 dbContext.autores1.Add(usu);
                 dbContext.SaveChanges();
                 return Ok(usu);
+              
             }
             else
             {

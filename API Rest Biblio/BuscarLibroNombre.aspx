@@ -28,6 +28,9 @@
             <br />
             <br />
             <br />
+            <asp:TextBox ID="txtnombre" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtautor" runat="server"></asp:TextBox>
             <br />
             <br />
             <br />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace API_Rest_Biblio
 {
@@ -12,6 +13,16 @@ namespace API_Rest_Biblio
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+           
         }
     }
 }

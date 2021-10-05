@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,13 +22,13 @@ namespace API_Rest_Biblio
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             string nombre = txtBuscarLibroTitulo.Text.ToString();
-
-            BibliotecaController controlador = new BibliotecaController();
-
-            x = controlador.GetLibros2(nombre);
-
             
 
+            BibliotecaController controlador = new BibliotecaController();
+            
+            
+            controlador.GetLibros(nombre);
+           
         }
 
         
