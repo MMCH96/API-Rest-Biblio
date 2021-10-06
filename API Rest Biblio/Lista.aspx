@@ -18,20 +18,21 @@
             <br />
             <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="835px" AllowPaging="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" PageSize="8">
                 <Columns>
-                    <asp:BoundField DataField="Titulo" HeaderText="Titulo" SortExpression="Titulo" />
-                    <asp:BoundField DataField="Autor" HeaderText="Autor" SortExpression="Autor" />
-                    <asp:BoundField DataField="Año Lanzamiento" HeaderText="Año Lanzamiento" SortExpression="Año Lanzamiento" />
-                    <asp:BoundField DataField="Editorial" HeaderText="Editorial" SortExpression="Editorial" />
-                    <asp:BoundField DataField="Idioma" HeaderText="Idioma" SortExpression="Idioma" />
-                    <asp:BoundField DataField="Paginas" HeaderText="Paginas" SortExpression="Paginas" />
-                    <asp:ImageField DataImageUrlField="Portada" HeaderText="Portada" ReadOnly="True">
-                    </asp:ImageField>
+                    <asp:BoundField DataField="Titulo" HeaderText="Titulo" SortExpression="Titulo"></asp:BoundField>
+                    <asp:BoundField DataField="Autor" HeaderText="Autor" SortExpression="Autor"></asp:BoundField>
+                    <asp:BoundField DataField="Año Lanzamiento" HeaderText="Año Lanzamiento" SortExpression="Año Lanzamiento"></asp:BoundField>
+                    <asp:BoundField DataField="Editorial" HeaderText="Editorial" SortExpression="Editorial"></asp:BoundField>
+                    <asp:BoundField DataField="Idioma" HeaderText="Idioma" SortExpression="Idioma"></asp:BoundField>
+                    <asp:BoundField DataField="Paginas" HeaderText="Paginas" SortExpression="Paginas"></asp:BoundField>
                 </Columns>
                 <FooterStyle BackColor="#CCCC00" BorderColor="Black" BorderStyle="Solid" />
                 <HeaderStyle BackColor="#CCCC00" />
                 <PagerStyle BackColor="#CCCC00" />
             </asp:GridView>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bibliotecaConnectionString %>" SelectCommand="SELECT * FROM [VistaGeneral]"></asp:SqlDataSource>
+            <br />
+            <br />
         </div>
     </form>
 </body>

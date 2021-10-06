@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -24,8 +25,24 @@ namespace API_Rest_Biblio.Moldels
         {
             using (bibliotecaEntities libros = new bibliotecaEntities())
             {
-
+                
+               
                 return libros.libros.ToList().Where(e => e.titulo.Contains(nombre));
+                
+                
+            }
+        }
+
+        //BUSCAR LIBROS POR ID
+        public IEnumerable<libro> GetLibros4(int id)
+        {
+            using (bibliotecaEntities libros = new bibliotecaEntities())
+            {
+
+
+                return libros.libros.ToList().Where(e => e.id_libro == id);
+
+
             }
         }
 
@@ -44,7 +61,6 @@ namespace API_Rest_Biblio.Moldels
         {
             using (bibliotecaEntities libros = new bibliotecaEntities())
             {
-
                 //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
                 return libros.libros.ToList();
             }

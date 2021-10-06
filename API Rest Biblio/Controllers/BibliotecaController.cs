@@ -28,13 +28,15 @@ namespace API_Rest_Biblio.Controllers
         {
            
             return this.modelo.GetLibros2();
+
+            
         }
 
 
-        //BUSQUEDA POR AUTOR LIBRO
+        //BUSQUEDA POR NOMBRE DE AUTOR
 
         [HttpGet]
-        [Route("busca/autores/nombre")]
+        [Route("busca/autores/nombre/{nombre}")]
         public IEnumerable<autores1> GetAutores(string nombre)
         {
             return modelo.GetAutores(nombre);
@@ -44,17 +46,27 @@ namespace API_Rest_Biblio.Controllers
         //BUSQUEDA POR NOMBRE DE LIBRO
 
         [HttpGet]
-        [Route("busca/libros/nombre")]
+        [Route("busca/libros/nombre/{nombre}")]
         public IEnumerable<libro> GetLibros(string nombre)
         {
            return modelo.GetLibros(nombre);
             
         }
 
+        //BUSQUEDA POR ID DE LIBRO
+
+        [HttpGet]
+        [Route("busca/libros/id/{id}")]
+        public IEnumerable<libro> GetLibros4(int id)
+        {
+            return modelo.GetLibros4(id);
+
+        }
+
         //BUSQUEDA POR AUTOR DE LIBRO
 
         [HttpGet]
-        [Route("busca/libros/nombre")]
+        [Route("busca/libros/autor/{autor}")]
         public IEnumerable<libro> GetLibros3(int autor)
         {
             return modelo.GetLibros3(autor);
@@ -99,9 +111,10 @@ namespace API_Rest_Biblio.Controllers
 
         //MODIFICAR AUTOR
         [HttpPut]
-        [Route("modificar/autor")]
+        [Route("modificar/autor/id/{id}")]
         public IHttpActionResult Actualizar_Autor(int id,[FromBody]autores1 usu)
         {
+            
             if (ModelState.IsValid)
             {
                 var AutorExiste = dbContext.autores1.Count(c => c.id_autor == id) > 0;
@@ -126,7 +139,7 @@ namespace API_Rest_Biblio.Controllers
 
         //MODIFICAR LIBRO
         [HttpPut]
-        [Route("modificar/libro")]
+        [Route("modificar/libro/{id}")]
         public IHttpActionResult Actualizar_Libro(int id, [FromBody] libro usu)
         {
             if (ModelState.IsValid)
@@ -153,7 +166,7 @@ namespace API_Rest_Biblio.Controllers
 
         //ELIMINAR AUTOR
         [HttpDelete]
-        [Route("eliminar/autor")]
+        [Route("eliminar/autor/{id}")]
         
         public IHttpActionResult EliminarAutor(int id)
         {
@@ -173,7 +186,7 @@ namespace API_Rest_Biblio.Controllers
 
         //ELIMINAR LIBRO
         [HttpDelete]
-        [Route("eliminar/libro")]
+        [Route("eliminar/libro/{id}")]
 
         public IHttpActionResult EliminarLibro(int id)
         {

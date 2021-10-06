@@ -92,7 +92,6 @@ C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\es\System.Web.Web
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\es\System.Web.WebPages.Razor.resources.dll
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\obj\Debug\API Rest Biblio.csproj.AssemblyReference.cache
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\obj\Debug\API Rest Biblio.csproj.CoreCompileInputs.cache
-C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\obj\Debug\API Rest Biblio.csproj.CopyComplete
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\obj\Debug\API Rest Biblio.dll
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\obj\Debug\API Rest Biblio.pdb
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\EntityFramework.SqlServer.dll
@@ -100,3 +99,8 @@ C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\EntityFramework.S
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\ConectaDatos.dll
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\ConectaDatos.pdb
 C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\ConectaDatos.dll.config
+C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\System.Net.Http.dll
+C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\migue\Desktop\API REST Biblioteca\API Rest Biblio\bin\System.Security.Cryptography.X509Certificates.dll
