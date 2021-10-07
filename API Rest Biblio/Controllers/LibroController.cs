@@ -15,9 +15,6 @@ namespace API_Rest_Biblio.Controllers
     {
 
         string BaseUrl = "https://localhost:44393/";
-        // GET: Libr
-
-
 
         public async Task<ActionResult> Index()
         {
@@ -71,15 +68,16 @@ namespace API_Rest_Biblio.Controllers
             {
                 cliente.BaseAddress = new Uri("https://localhost:44393/");
                 var responseTask = cliente.GetAsync("busca/libros/id/{id}" + id.ToString());
-                //responseTask.Wait();
+                responseTask.Wait();
 
                 var result = responseTask.Result;
                 if(result.IsSuccessStatusCode)
                 {
+                    
                     var readTask = result.Content.ReadAsAsync<ClaseLibro>();
-                    //readTask.Wait();
+                     readTask.Wait();
                     libro = readTask.Result;
-
+                    return View(libro);
                 }
 
             }
@@ -95,7 +93,7 @@ namespace API_Rest_Biblio.Controllers
                 var putTask = cliente.PutAsJsonAsync($"modificar/libro/{ libro.id_libro}", libro);
                 putTask.Wait();
                 var result = putTask.Result;
-                if(result.IsSuccessStatusCode)
+                if (result.IsSuccessStatusCode)
                 {
                     return RedirectToAction("index");
                 }
@@ -142,6 +140,28 @@ namespace API_Rest_Biblio.Controllers
                 }
             }
             return View(libro);
+        }
+
+
+        public async Task<ActionResult> BuscaLibroTit(string titulo)
+        {
+            List<ClaseLibro> EmpInfo = new List<ClaseLibro>();
+            using (var cliente = new HttpClient())
+            {
+                cliente.BaseAddress = new Uri(BaseUrl);
+                cliente.DefaultRequestHeaders.Clear();
+                cliente.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("aplication/json"));
+
+                HttpResponseMessage Res = await cliente.GetAsync("busca/libros/nombre/" + titulo);
+                if (Res.IsSuccessStatusCode)
+                {
+                    var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+
+                    EmpInfo = JsonConvert.DeserializeObject<List<ClaseLibro>>(EmpResponse);
+
+                }
+                return View(EmpInfo);
+            }
         }
     }
 }

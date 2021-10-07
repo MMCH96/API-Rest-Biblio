@@ -21,7 +21,7 @@ namespace API_Rest_Biblio.Controllers
             this.modelo = new ModeloBiblioteca();
         }
 
-        //VISTA GENERAL
+        //VISTA GENERAL LIBROS
         [HttpGet]
         [Route("lista/libros")]
         public IEnumerable<libro> GetLibros2()
@@ -32,6 +32,16 @@ namespace API_Rest_Biblio.Controllers
             
         }
 
+        //VISTA GENERAL AUTORES
+        [HttpGet]
+        [Route("lista/autores")]
+        public IEnumerable<autores1> GetAutores2()
+        {
+
+            return this.modelo.GetAutores2();
+
+
+        }
 
         //BUSQUEDA POR NOMBRE DE AUTOR
 
@@ -42,6 +52,14 @@ namespace API_Rest_Biblio.Controllers
             return modelo.GetAutores(nombre);
         }
 
+        //BUSQUEDA POR IDE DE AUTOR
+
+        [HttpGet]
+        [Route("busca/autores/id/{id}")]
+        public IEnumerable<autores1> GetAutores3(int id)
+        {
+            return modelo.GetAutores3(id);
+        }
 
         //BUSQUEDA POR NOMBRE DE LIBRO
 
@@ -111,7 +129,7 @@ namespace API_Rest_Biblio.Controllers
 
         //MODIFICAR AUTOR
         [HttpPut]
-        [Route("modificar/autor/id/{id}")]
+        [Route("modificar/autor/{id}")]
         public IHttpActionResult Actualizar_Autor(int id,[FromBody]autores1 usu)
         {
             

@@ -1,0 +1,48 @@
+﻿@model API_Rest_Biblio.Models.ClaseAutores
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminando Autor</h2>
+
+<h3>¿Estas seguro de eliminar este autor?</h3>
+<div>
+    <h4>ClaseAutores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           <b>ID</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(autor => autor.id_autor)
+        </dd>
+
+        <dt>
+            <b>NOMBRE COMPLETO</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomb_comp)
+        </dd>
+
+        <dt>
+            <b>NACIONALIDAD</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nacionalidad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="ELIMINAR" class="btn btn-default" /> |
+            @Html.ActionLink("CANCELAR", "Index")
+        </div>
+    }
+</div>

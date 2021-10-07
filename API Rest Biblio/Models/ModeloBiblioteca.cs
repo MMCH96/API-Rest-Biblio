@@ -56,7 +56,7 @@ namespace API_Rest_Biblio.Moldels
             }
         }
 
-        //VISTA GENERAL
+        //VISTA GENERAL LIBROS
         public IEnumerable<libro> GetLibros2()
         {
             using (bibliotecaEntities libros = new bibliotecaEntities())
@@ -67,6 +67,17 @@ namespace API_Rest_Biblio.Moldels
 
         }
 
+
+        //VISTA GENERAL AUTORES
+        public IEnumerable<autores1> GetAutores2()
+        {
+            using (bibliotecaEntities autores1 = new bibliotecaEntities())
+            {
+                //return libros.libros.FirstOrDefault(e => e.titulo.Contains(nombre));
+                return autores1.autores1.ToList();
+            }
+
+        }
         private libro view()
         {
             throw new NotImplementedException();
@@ -81,12 +92,19 @@ namespace API_Rest_Biblio.Moldels
             }
         }
 
-        
+        //BUSCAR AUTORES POR ID
+        public IEnumerable<autores1> GetAutores3(int id)
+        {
+            using (bibliotecaEntities autores = new bibliotecaEntities())
+            {
+                return autores.autores1.ToList().Where(e => e.id_autor == id);
+            }
+        }
 
 
-       
 
-        
+
+
 
     }
 }

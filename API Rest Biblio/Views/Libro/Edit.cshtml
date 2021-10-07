@@ -12,36 +12,36 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Libro </h4>
+        <h4>Ingresa los Nuevos Datos</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             <div class="control-label col-md-2"><b>ID</b></div>
             
-            <div class="col-md-10">
+            <div class="col-md-10" >
                 @Html.EditorFor(model => model.id_libro, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.id_libro, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_autor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2"><b>ID AUTOR</b></div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.id_autor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.id_autor, new { htmlAttributes = new { @class = "form-control"} })
                 @Html.ValidationMessageFor(model => model.id_autor, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2"><b>TITULO</b></div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.titulo,  new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.fecha_lanz, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2"><b>AÑO DE LANZAMIENTO</b></div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.fecha_lanz, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.fecha_lanz, "", new { @class = "text-danger" })
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.editorial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2"><b>EDITORIAL</b></div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.editorial, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.editorial, "", new { @class = "text-danger" })
@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idioma, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2"><b>IDIOMA</b></div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.idioma, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.idioma, "", new { @class = "text-danger" })
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.paginas, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2"><b>PAGINAS</b></div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.paginas, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.paginas, "", new { @class = "text-danger" })
@@ -74,14 +74,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="GUARDAR" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("CANCELAR", "Index")
 </div>
 
 @section Scripts {

@@ -6,13 +6,13 @@
 
 <h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas seguro de Elimnar este libro ?</h3>
 <div>
-    <h4>ClaseLibro</h4>
+    <h4>Datos a Eliminar</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.id_libro)
+            <b>ID</b>
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.id_autor)
+            <b>ID Autor</b>
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.titulo)
+            Titulo
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fecha_lanz)
+            Año de Lanzamiento
         </dt>
 
         <dd>
@@ -44,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.editorial)
+            Editorial
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.idioma)
+            Idioma
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.paginas)
+            Paginas
         </dt>
 
         <dd>
@@ -73,8 +73,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="ELIMINAR" class="btn btn-default" /> |
+            @Html.ActionLink("CANCELAR", "Index")
         </div>
     }
 </div>

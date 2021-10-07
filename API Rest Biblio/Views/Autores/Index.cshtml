@@ -1,0 +1,44 @@
+﻿@model IEnumerable<API_Rest_Biblio.Models.ClaseAutores>
+
+@{
+    ViewBag.Title = "Lista de Autores";
+}
+
+<h2>Lista de Autores</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Autor", "nuevoautor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <b>ID</b>
+        </th>
+        <th>
+            <b>Nombre Completo</b>
+        </th>
+        <th>
+            <b>Nacionaliad</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomb_comp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nacionalidad)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_autor }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_autor })
+        </td>
+    </tr>
+}
+
+</table>

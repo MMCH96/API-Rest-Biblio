@@ -8,6 +8,7 @@
 
 
     <p>@Html.ActionLink("Nuevo Libro","nuevolibro")</p>
+    
 
 <table class="table">
     <tr>
@@ -35,6 +36,9 @@
         <th>
             Portada
         </th>
+        <th>
+            Controles
+        </th>
         <th></th>
     </tr>
 
@@ -61,10 +65,13 @@
     <td>
         @Html.DisplayFor(modelItem => item.paginas)
     </td>
-    
     <td>
-        @Html.ActionLink("Editar", "Edit", new { id=item.id_libro}) |
-        @Html.ActionLink("Eliminar", "Delete", new { id=item.id_libro })
+        
+    </td>
+
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id = item.id_libro }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.id_libro })
     </td>
 </tr>
 }
